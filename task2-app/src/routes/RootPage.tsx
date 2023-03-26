@@ -8,7 +8,7 @@ import { data } from '../data/data';
 
 
 
-class Root extends Component<object, { items: ICard[] }> {
+class RootPage extends Component<object, { items: ICard[] }> {
 
   constructor(props: object) {
     super(props);
@@ -28,4 +28,4 @@ class Root extends Component<object, { items: ICard[] }> {
     );
   }
 }
-export default Root;
+export default RootPage;
