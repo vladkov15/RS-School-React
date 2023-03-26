@@ -26,10 +26,10 @@ class Card extends Component<
     return (
       <div className="card">
         <div className="card-header-wrapper">
-          <div className="card-book">
-            <img className="book-img" src={picture} alt="book image" />
-            <p className="book-title">{item.title}</p>
-            <p className="book-subtitle">{item.subtitle}</p>
+          <div className="card-post">
+            <img className="post-img" src={picture} alt="image" />
+            <p className="post-title">{item.title}</p>
+            <p className="post-subtitle">{item.subtitle}</p>
           </div>
         </div>
         <div>

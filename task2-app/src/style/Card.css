@@ -8,7 +8,7 @@
     border-radius: 15px;
   }
   
-  .card-book {
+  .card-post {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,23 +16,23 @@
     width: 250px;
   }
   
-  .book-img {
+  .post-img {
     width: 300px;
   }
   
-  .book-title {
+  .post-title {
     font-weight: 900;
-    color: rgb(253, 7, 7);
+    color: rgb(77, 0, 201);
   }
   
-  .book-subtitle {
+  .post-subtitle {
     color: rgb(0, 0, 0);
   }
   
-  .book-price,
-  .book-title,
-  .book-subtitle,
-  .book-details {
+  .post-price,
+  .post-title,
+  .post-subtitle,
+  .post-details {
     margin: 0 20px 10px 20px;
   }
   
