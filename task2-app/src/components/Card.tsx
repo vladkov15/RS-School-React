@@ -1,9 +1,9 @@
-import { Component } from "react";
-import { ICard } from "../models/types";
+import { Component } from 'react';
+import { ICard } from '../models/types';
 import likeSvg from '../assets/like-svgrepo-com.svg';
 import viewSvg from '../assets/eye-svgrepo-com.svg';
 import picture from '../assets/radial-gradient-top-left.png';
-import '../style/Card.css'
+import '../style/Card.css';
 
 class Card extends Component<
   { item: ICard; key: string },
@@ -17,7 +17,6 @@ class Card extends Component<
     this.state = {
       likes: 0,
       views: 0,
-      
     };
   }
 
@@ -36,11 +35,7 @@ class Card extends Component<
           <hr className="hr"></hr>
           <div className="card-footer-wrapper">
             <div className="likes-block">
-              <img
-                className="like-img"
-                src={likeSvg}
-                alt="like image"
-              />
+              <img className="like-img" src={likeSvg} alt="like image" />
               <strong className="card-footer-text">{this.state.likes}</strong>
             </div>
             <div className="views-block">

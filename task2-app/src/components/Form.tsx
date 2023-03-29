@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, useRef } from 'react';
+import React, { Component } from 'react';
 
 interface FormState {
   name: string | undefined;
@@ -8,8 +8,6 @@ interface FormState {
   sex: string | undefined;
   image: string | undefined;
 }
-
-
 
 class Form extends Component<{ setForm: () => void }, FormState> {
   inputName: React.RefObject<HTMLInputElement>;
@@ -40,59 +38,59 @@ class Form extends Component<{ setForm: () => void }, FormState> {
     this.setState((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
-  onChangeName = () =>{
+  onChangeName = () => {
     this.setState({
-      name: this.inputName.current?.value 
+      name: this.inputName.current?.value,
     });
-  }
+  };
 
-  onChangeSecondName = () =>{
+  onChangeSecondName = () => {
     this.setState({
-      second_name: this.inputSecondName.current?.value 
+      second_name: this.inputSecondName.current?.value,
     });
-  }
+  };
 
-  onChangeDate = () =>{
+  onChangeDate = () => {
     this.setState({
-      date: this.inputDate.current?.value 
+      date: this.inputDate.current?.value,
     });
-  }
+  };
 
-  onChangeCountry = () =>{
+  onChangeCountry = () => {
     this.setState({
-      country: this.selectCountry.current?.value 
+      country: this.selectCountry.current?.value,
     });
-  }
+  };
 
-  onChangeSex = () =>{
+  onChangeSex = () => {
     this.setState({
-      sex: this.inputSex.current?.value 
+      sex: this.inputSex.current?.value,
     });
-  }
+  };
 
-  onChangeFile = () =>{
+  onChangeFile = () => {
     this.setState({
-      image: URL.createObjectURL(this.inputFile.current!.files![0])
+      image: URL.createObjectURL(this.inputFile.current!.files![0]),
     });
-  }
-  
-  clearForm = () =>{
+  };
+
+  clearForm = () => {
     if (this.inputName.current) this.inputName.current.value = '';
     if (this.inputSecondName.current) this.inputSecondName.current.value = '';
     if (this.inputDate.current) this.inputDate.current.value = '';
     if (this.inputSex.current) this.inputSex.current.value = '';
     if (this.inputFile.current) this.inputFile.current.value = '';
-  }
+  };
   submitForm(event: React.FormEvent) {
     event.preventDefault();
     if (!localStorage.forms) {
       localStorage.setItem('forms', JSON.stringify([this.state]));
       this.props.setForm();
-      this.clearForm
+      this.clearForm;
       return;
     }
     localStorage.forms = JSON.stringify([...JSON.parse(localStorage.forms), this.state]);
-    this.clearForm
+    this.clearForm;
     this.props.setForm();
   }
 
@@ -142,7 +140,12 @@ class Form extends Component<{ setForm: () => void }, FormState> {
           <div>
             <label>
               Choose a country:
-              <select name="country" ref={this.selectCountry} onChange={this.onChangeCountry} required>
+              <select
+                name="country"
+                ref={this.selectCountry}
+                onChange={this.onChangeCountry}
+                required
+              >
                 <option value="Belarus">Belarus</option>
                 <option value="Russian">Russian</option>
                 <option value="Ukraine">Ukraine</option>

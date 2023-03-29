@@ -46,4 +46,4 @@ export const data: ICard[] = [
     subtitle: 'Another text',
     image: '../assets/radial-gradient-top-left.png',
   },
- ]
+];

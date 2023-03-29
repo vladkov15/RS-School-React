@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import  Form  from '../components/Form';
-import  FormCard  from '../components/FormCard';
+import Form from '../components/Form';
+import FormCard from '../components/FormCard';
 
 import { IForm } from '../models/types';
 import DefaultLayout from '../layouts/DefaultLayout';
 
- class FormsPage extends Component<Record<string, never>, { forms: IForm[] }> {
+class FormsPage extends Component<Record<string, never>, { forms: IForm[] }> {
   constructor(props: Record<string, never>) {
     super(props);
     this.state = {
@@ -30,7 +30,7 @@ import DefaultLayout from '../layouts/DefaultLayout';
             <p>Submited forms</p>
             <div>
               {this.state.forms.map((form, i) => {
-                return <FormCard data={form}  key={form.name+i} />;
+                return <FormCard data={form} key={form.name + i} />;
               })}
             </div>
           </div>
@@ -39,4 +39,4 @@ import DefaultLayout from '../layouts/DefaultLayout';
     );
   }
 }
-export default FormsPage
+export default FormsPage;

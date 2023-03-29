@@ -6,7 +6,7 @@ export interface ICard {
 
 export interface IForm {
   name: string;
-  second_name:string;
+  second_name: string;
   date: string;
   country: string;
   sex: string;

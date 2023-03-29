@@ -1,4 +1,4 @@
-import { Component, ReactNode } from 'react';
+import { Component } from 'react';
 import searchSvg from '../assets/iconsearch.png';
 import '../style/root.css';
 
