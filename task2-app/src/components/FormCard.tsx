@@ -9,7 +9,7 @@ interface IFormCardProps {
  const FormCard = ({ data}: IFormCardProps) => {
   return (
         <div>
-          <img id={'image'} width="300px" height="300px"/>
+          <img id={data.image} width="300px" height="300px"/>
           <p>Name: { data.name}</p>
           <p>Second-Name: { data.second_name}</p>
           <p>Date: {data.date}</p>
