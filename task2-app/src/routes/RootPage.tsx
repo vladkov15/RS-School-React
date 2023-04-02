@@ -8,15 +8,15 @@ interface RootPageProps {
   items: ICard[];
 }
 
-const RootPage: FC<RootPageProps> = ({ items }) => {
+const RootPage: FC<RootPageProps> = ({}) => {
   return (
     <>
       <div>
         <DefaultLayout />
         <h1 className="header">Home Page</h1>
-        <Search search={'dknvkd'} />
+        <Search />
         <br />
-        <Cards  />
+        <Cards />
       </div>
     </>
   );

@@ -23,7 +23,7 @@ const MyForm: React.FC<MyFormProps> = ({ onSubmit }) => {
     gender: '',
     image: null,
   });
-  const [refData, refFormData] = useState<FormData>({
+  const [refData] = useState<FormData>({
     firstName: '',
     lastName: '',
     dateOfBirth: new Date(),
@@ -82,7 +82,7 @@ const MyForm: React.FC<MyFormProps> = ({ onSubmit }) => {
     console.log(formData);
   };
 
-  const omSubmit = handleSubmit((data) => {
+  const omSubmit = handleSubmit(() => {
     handleChange();
   });
 

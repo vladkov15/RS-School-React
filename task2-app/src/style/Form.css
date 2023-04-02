@@ -10,3 +10,16 @@
     background-color: red;
     text-align: center;
   }
+
+
+  .form-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .form-card{
+    margin: 30px;
+  }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import FormCard from '../components/Form/FormCard';
 import { IForm } from '../models/types';
@@ -28,8 +28,8 @@ const FormsPage = () => {
           <MyForm onSubmit={setForm} />
         </div>
         <div>
-          <p>Submitted forms</p>
-          <div>
+          <br />
+          <div className="form-container">
             {forms.map((form, i) => {
               return <FormCard data={form} key={form.firstName + i} />;
             })}

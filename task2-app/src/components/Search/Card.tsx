@@ -23,7 +23,7 @@ const Card = ({ item }: { item: ICard }) => {
         <div className="card-footer-wrapper">
           <div className="likes-block">
             <button
-              onClick={(e) => {
+              onClick={() => {
                 setLikes(likes + 1);
               }}
             >
@@ -34,7 +34,7 @@ const Card = ({ item }: { item: ICard }) => {
           </div>
           <div className="views-block">
             <button
-              onClick={(e) => {
+              onClick={() => {
                 setViews(views + 1);
               }}
             >
