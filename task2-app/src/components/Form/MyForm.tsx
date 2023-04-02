@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface FormData {
   firstName: string;
@@ -8,8 +10,13 @@ interface FormData {
   gender: string;
   image: File | null;
 }
+interface MyFormProps {
+  onSubmit: () => void;
+}
 
-const MyForm: React.FC = () => {
+const MyForm: React.FC<MyFormProps>  = ({ onSubmit }) => {
+  
+
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -36,6 +43,13 @@ const MyForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!localStorage.forms) {
+      localStorage.setItem('forms', JSON.stringify([formData]));
+      onSubmit()
+      return;
+    }
+    localStorage.forms = JSON.stringify([...JSON.parse(localStorage.forms), formData]);
+    onSubmit()
     console.log(formData);
   };
 
@@ -54,6 +68,7 @@ const MyForm: React.FC = () => {
       <label>
         Date of Birth:
         <DatePicker selected={formData.dateOfBirth} onChange={handleDateChange} />
+        
       </label>
       <br />
       <label>
@@ -68,8 +83,8 @@ const MyForm: React.FC = () => {
       <br />
       <label>
         Gender:
-        <input type="checkbox" name="gender" value="male" onChange={handleInputChange} /> Male
-        <input type="checkbox" name="gender" value="female" onChange={handleInputChange} /> Female
+        <input type="radio" name="gender" value="male" onChange={handleInputChange} /> Male
+        <input type="radio" name="gender" value="female" onChange={handleInputChange} /> Female
       </label>
       <br />
       <label>

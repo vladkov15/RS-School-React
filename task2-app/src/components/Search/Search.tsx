@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import searchSvg from '../assets/iconsearch.png';
-import '../style/root.css';
+import searchSvg from '../../assets/iconsearch.png';
+import '../../style/root.css';
 
 interface SearchProps {
   search: string;

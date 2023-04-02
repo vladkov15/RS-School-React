@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { ICard } from '../models/types';
+import { ICard } from '../../models/types';
 import Card from './Card';
-import '../style/Cards.css';
+import '../../style/Cards.css';
 
 class Cards extends Component<{ items: ICard[] }> {
   render() {

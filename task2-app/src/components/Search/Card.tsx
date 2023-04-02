@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { ICard } from '../models/types';
-import likeSvg from '../assets/like-svgrepo-com.svg';
-import viewSvg from '../assets/eye-svgrepo-com.svg';
-import picture from '../assets/radial-gradient-top-left.png';
-import '../style/Card.css';
+import { ICard } from '../../models/types';
+import likeSvg from '../../assets/like-svgrepo-com.svg';
+import viewSvg from '../../assets/eye-svgrepo-com.svg';
+import picture from '../../assets/radial-gradient-top-left.png';
+import '../../style/Card.css';
 
 class Card extends Component<
   { item: ICard; key: string },

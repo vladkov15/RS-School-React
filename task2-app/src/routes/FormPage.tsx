@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Form from '../components/Form';
-import FormCard from '../components/FormCard';
+
+import FormCard from '../components/Form/FormCard';
 import { IForm } from '../models/types';
 import DefaultLayout from '../layouts/DefaultLayout';
+import MyForm from '../components/Form/MyForm';
 
 const FormsPage = () => {
   const [forms, setForms] = useState<IForm[]>([]);
@@ -22,12 +23,12 @@ const FormsPage = () => {
       <DefaultLayout />
       <div>
         <h1>Forms Page</h1>
-        <Form setForm={setForm} />
+        <MyForm onSubmit={setForm} />
         <div>
           <p>Submitted forms</p>
           <div>
             {forms.map((form, i) => {
-              return <FormCard data={form} key={form.name + i} />;
+              return <FormCard data={form} key={form.firstName + i} />;
             })}
           </div>
         </div>

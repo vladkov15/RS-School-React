@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Cards from '../components/Cards';
-import Search from '../components/Search';
+import Cards from '../components/Search/Cards';
+import Search from '../components/Search/Search';
 import DefaultLayout from '../layouts/DefaultLayout';
 import { ICard } from '../models/types';
 import { data } from '../data/data';

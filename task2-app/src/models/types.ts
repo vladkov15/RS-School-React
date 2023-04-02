@@ -5,10 +5,10 @@ export interface ICard {
 }
 
 export interface IForm {
-  name: string;
-  second_name: string;
-  date: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: Date;
   country: string;
-  sex: string;
-  image: string;
+  gender: string;
+  image: File | null;
 }
