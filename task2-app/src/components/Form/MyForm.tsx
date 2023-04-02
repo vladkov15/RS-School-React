@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 interface FormData {
@@ -14,9 +14,7 @@ interface MyFormProps {
   onSubmit: () => void;
 }
 
-const MyForm: React.FC<MyFormProps>  = ({ onSubmit }) => {
-  
-
+const MyForm: React.FC<MyFormProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -43,13 +41,41 @@ const MyForm: React.FC<MyFormProps>  = ({ onSubmit }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (
+      !formData.firstName 
+      !formData.lastName 
+      !formData.dateOfBirth 
+      !formData.country 
+      !formData.gender ||
+      !formData.image
+    ) {
+      alert('Please fill out required fields.');
+      return;
+    }
     if (!localStorage.forms) {
       localStorage.setItem('forms', JSON.stringify([formData]));
-      onSubmit()
+      onSubmit();
+      setFormData({
+        firstName: '',
+        lastName: '',
+        dateOfBirth: new Date(),
+        country: '',
+        gender: '',
+        image: null,
+      });
       return;
     }
     localStorage.forms = JSON.stringify([...JSON.parse(localStorage.forms), formData]);
-    onSubmit()
+    onSubmit();
+    setFormData({
+      firstName: '',
+      lastName: '',
+      dateOfBirth: new Date(),
+      country: '',
+      gender: '',
+      image: null,
+    });
     console.log(formData);
   };
 
@@ -57,7 +83,12 @@ const MyForm: React.FC<MyFormProps>  = ({ onSubmit }) => {
     <form onSubmit={handleSubmit}>
       <label>
         First Name:
-        <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
+        <input
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleInputChange}
+        />
       </label>
       <br />
       <label>
@@ -68,7 +99,6 @@ const MyForm: React.FC<MyFormProps>  = ({ onSubmit }) => {
       <label>
         Date of Birth:
         <DatePicker selected={formData.dateOfBirth} onChange={handleDateChange} />
-        
       </label>
       <br />
       <label>
