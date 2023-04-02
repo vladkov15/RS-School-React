@@ -1,18 +1,22 @@
-import { Component } from 'react';
+import { FC } from 'react';
 import { ICard } from '../../models/types';
 import Card from './Card';
 import '../../style/Cards.css';
+import { data } from '../../data/data';
 
-class Cards extends Component<{ items: ICard[] }> {
-  render() {
-    return (
-      <div className="cards">
-        {this.props.items.map((item) => {
-          return <Card item={item} key={item.title} />;
-        })}
-      </div>
-    );
-  }
+
+interface CardsProps{
+  item: ICard[]
 }
+
+const Cards = () => {
+  return (
+    <div className="cards">
+      {data.map((item, index) => {
+        return <Card item={item} key={index} />;
+      })}
+    </div>
+  );
+};
 
 export default Cards;

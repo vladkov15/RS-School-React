@@ -4,7 +4,7 @@ import FormCard from '../components/Form/FormCard';
 import { IForm } from '../models/types';
 import DefaultLayout from '../layouts/DefaultLayout';
 import MyForm from '../components/Form/MyForm';
-import '../style/Form.css'
+import '../style/Form.css';
 
 const FormsPage = () => {
   const [forms, setForms] = useState<IForm[]>([]);
@@ -23,9 +23,9 @@ const FormsPage = () => {
     <>
       <DefaultLayout />
       <div>
-        <div className='form'>
-        <h1>Forms Page</h1>
-        <MyForm onSubmit={setForm} />
+        <div className="form">
+          <h1>Forms Page</h1>
+          <MyForm onSubmit={setForm} />
         </div>
         <div>
           <p>Submitted forms</p>

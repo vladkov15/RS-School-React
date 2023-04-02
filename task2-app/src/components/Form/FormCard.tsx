@@ -10,7 +10,7 @@ function normilizeDate(data: Date) {
 const FormCard = ({ data }: IFormCardProps) => {
   return (
     <div>
-      <img  width="300px" height="300px" />
+      <img width="300px" height="300px" />
       <p>Name: {data.firstName}</p>
       <p>Second-Name: {data.lastName}</p>
       <p>Date: {normilizeDate(data.dateOfBirth)}</p>

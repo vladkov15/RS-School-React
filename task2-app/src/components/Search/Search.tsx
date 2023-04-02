@@ -7,7 +7,9 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ search }) => {
-  const [searchValue, setSearchValue] = useState<string>(() => localStorage.getItem('search') || '');
+  const [searchValue, setSearchValue] = useState<string>(
+    () => localStorage.getItem('search') || ''
+  );
 
   useEffect(() => {
     localStorage.setItem('search', searchValue);
