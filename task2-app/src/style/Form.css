@@ -5,3 +5,8 @@
     justify-content: center;
     
   }
+
+  .alert-message{
+    background-color: red;
+    text-align: center;
+  }
