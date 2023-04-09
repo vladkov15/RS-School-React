@@ -4,9 +4,13 @@ import MyForm from './MyForm';
 
 describe('Form', () => {
   it('Renders form', () => {
-    render(<MyForm onSubmit={function (): void {
-        throw new Error('Function not implemented.');
-    } } />);
+    render(
+      <MyForm
+        onSubmit={function (): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
+    );
     expect(screen.getByText(/First Name:/i)).toBeInTheDocument();
     expect(screen.getByText(/Last Name:/i)).toBeInTheDocument();
     expect(screen.getByText(/Date of Birth:/i)).toBeInTheDocument();

@@ -13,13 +13,6 @@ export interface IForm {
   image: File | null;
 }
 
-export interface SwapiData {
-  count: number;
-  next: string | null;
-  previous: string | null;
-  results: any[];
-}
-
 export interface Film {
   title: string;
   episode_id: number;
@@ -47,6 +40,4 @@ export interface Planet {
   population: string;
 }
 
-export interface ApiAll extends Person, Planet, Film{
-  
-}
+export interface ApiAll extends Planet, Person, Film {}

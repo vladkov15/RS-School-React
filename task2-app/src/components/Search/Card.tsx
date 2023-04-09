@@ -1,22 +1,27 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { ApiAll } from '../../models/types';
 import likeSvg from '../../assets/like-svgrepo-com.svg';
 import viewSvg from '../../assets/eye-svgrepo-com.svg';
 import picture from '../../assets/radial-gradient-top-left.png';
 import '../../style/Card.css';
-
-const Card = ({ item }: { item: ApiAll }) => {
+interface CardProps {
+  item: ApiAll;
+  modalOpen: (data: ApiAll) => void;
+}
+const Card: FC<CardProps> = ({ item, modalOpen }) => {
   const [likes, setLikes] = useState<number>(0);
   const [views, setViews] = useState<number>(0);
 
   return (
-    <div className="card">
+    <div className="card" onClick={() => modalOpen(item)}>
       <div className="card-header-wrapper">
         <div className="card-post">
           <img className="post-img" src={picture} alt="image" />
           {item.name && <p className="post-title">{item.name}</p>}
           {item.title && <p className="post-title">{item.title}</p>}
-          {item.birth_year && <p className="post-subtitle">{'дата рождения: ' + item.birth_year}</p>}
+          {item.birth_year && (
+            <p className="post-subtitle">{'дата рождения: ' + item.birth_year}</p>
+          )}
           {item.opening_crawl && <p className="post-subtitle">{item.opening_crawl}</p>}
           {item.population && <p className="post-subtitle">{'популяция: ' + item.population}</p>}
         </div>

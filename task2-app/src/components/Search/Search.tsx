@@ -1,16 +1,16 @@
-import { useState, useEffect, FC } from 'react';
+import { useState, FC } from 'react';
 import searchSvg from '../../assets/iconsearch.png';
 import '../../style/root.css';
 
 interface SearchProps {
   onSearch: (data: string) => void;
 }
-const Search: FC<SearchProps> = ({onSearch}) => {
+const Search: FC<SearchProps> = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   const handleSearchClick = () => {
     if (!searchValue) return;
-    onSearch(searchValue)
+    onSearch(searchValue);
   };
 
   return (

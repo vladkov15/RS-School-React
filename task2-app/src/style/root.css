@@ -39,3 +39,7 @@ h1.header{
 .container button img {
   height: 30px;
 }
+
+.hide{
+  z-index: 1;
+}
