@@ -1,20 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import searchSvg from '../../assets/iconsearch.png';
 import '../../style/root.css';
 
-const Search = () => {
-  const [searchValue, setSearchValue] = useState<string>(
-    () => localStorage.getItem('search') || ''
-  );
-
-  useEffect(() => {
-    localStorage.setItem('search', searchValue);
-  }, [searchValue]);
+interface SearchProps {
+  onSearch: (data: string) => void;
+}
+const Search: FC<SearchProps> = ({onSearch}) => {
+  const [searchValue, setSearchValue] = useState<string>('');
 
   const handleSearchClick = () => {
     if (!searchValue) return;
-
-    localStorage.setItem('search', searchValue);
+    onSearch(searchValue)
   };
 
   return (

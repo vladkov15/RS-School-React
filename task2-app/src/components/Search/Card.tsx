@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { ICard } from '../../models/types';
+import { ApiAll } from '../../models/types';
 import likeSvg from '../../assets/like-svgrepo-com.svg';
 import viewSvg from '../../assets/eye-svgrepo-com.svg';
 import picture from '../../assets/radial-gradient-top-left.png';
 import '../../style/Card.css';
 
-const Card = ({ item }: { item: ICard }) => {
+const Card = ({ item }: { item: ApiAll }) => {
   const [likes, setLikes] = useState<number>(0);
   const [views, setViews] = useState<number>(0);
 
@@ -14,8 +14,11 @@ const Card = ({ item }: { item: ICard }) => {
       <div className="card-header-wrapper">
         <div className="card-post">
           <img className="post-img" src={picture} alt="image" />
-          <p className="post-title">{item.title}</p>
-          <p className="post-subtitle">{item.subtitle}</p>
+          {item.name && <p className="post-title">{item.name}</p>}
+          {item.title && <p className="post-title">{item.title}</p>}
+          {item.birth_year && <p className="post-subtitle">{'дата рождения: ' + item.birth_year}</p>}
+          {item.opening_crawl && <p className="post-subtitle">{item.opening_crawl}</p>}
+          {item.population && <p className="post-subtitle">{'популяция: ' + item.population}</p>}
         </div>
       </div>
       <div>

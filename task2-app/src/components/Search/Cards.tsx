@@ -1,11 +1,16 @@
 import Card from './Card';
 import '../../style/Cards.css';
-import { data } from '../../data/data';
+import { ApiAll } from '../../models/types';
+import { FC } from 'react';
 
-const Cards = () => {
+interface CardsProps{
+  items: ApiAll[] 
+}
+
+const Cards:FC<CardsProps> = ({items} ) => {
   return (
     <div className="cards">
-      {data.map((item, index) => {
+      {items.map((item, index) => {
         return <Card item={item} key={index} />;
       })}
     </div>
